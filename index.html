@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>myHome</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+	<style type="text/css">
+		html {
+			height: 100%;
+		}
+
+		body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div style=" height:100%;background-color: #fff;">
+		<div style="margin:10px;">
+
+			<div class="panel panel-primary">
+				<!-- Default panel contents -->
+				<div class="panel-heading">Capteur</div>
+				<div style="margin:10px;">
+					<div class="row" style='text-align: center'>
+							<div class="col-md-2 col-xs-0"></div>
+						<div class="col-md-3 col-xs-6">
+							<h2 id="temperature">- °C</h2>
+							<div id="temChart" align="center"></div>
+							<p>Température </p>
+						</div>
+						<div class="col-md-2 col-xs-0"></div>
+						<div class="col-md-3 col-xs-6">
+							<h2 id="humidity">- %</h2>
+							<div id="humChart" align="center"></div>
+							<p>Humidité</p>
+					 </div>
+					 <div class="col-md-2 col-xs-0"></div>
+					</div>
+				</div>
+				<div class="row" style='text-align: center'>
+						<p id="datetime">YYYY-MM-DD HH:mm:ss</p>
+				</div>
+				<br>
+			</div>
+			<br>
+
+
+			<div class="panel panel-primary">
+				<!-- Default panel contents -->
+				<div class="panel-heading">Scénarios</div>
+				<div style="margin:10px;">
+					<button type="button" onclick="doAction('767084','1')" class="btn btn-default btn-lg btn-block">Ouverture complète</button>
+					<button type="button" onclick="doAction('767084','0')" class="btn btn-default btn-lg btn-block">Arrêt complet</button>
+					<button type="button" onclick="doAction('767084','2')" class="btn btn-default btn-lg btn-block">Fermeture complète</button>
+				</div>
+
+			</div>
+			<br>
+			<div class="panel panel-primary">
+				<!-- Default panel contents -->
+				<div class="panel-heading">Pièces</div>
+
+
+
+
+				<div style="margin:10px;" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingOne">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+								 aria-controls="collapseOne">
+									Bureau
+								</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+							<div class="panel-body" align="center">
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('803878','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('803878','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('803878','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingTwo">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+								 aria-controls="collapseTwo">
+									Chambre d'amis
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body" align="center">
+								<div>Fenêtre gauche</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('803876','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('803876','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('803876','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+								<div><br></div>
+								<div>Fenêtre droite</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('916999','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('916999','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('916999','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Salle de bain
+								</a>
+							</h4>
+						</div>
+						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('917005','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917005','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917005','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Chambre des parents
+								</a>
+							</h4>
+						</div>
+						<div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div>Fenêtre gauche</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('917003','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917003','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917003','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+								<div><br></div>
+								<div>Fenêtre droite</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('917004','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917004','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('917004','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Chambre d'Elise
+								</a>
+							</h4>
+						</div>
+						<div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('148132','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('148132','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('148132','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Chambre d'Adèle
+								</a>
+							</h4>
+						</div>
+						<div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('937619','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('937619','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('937619','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Salon
+								</a>
+							</h4>
+						</div>
+						<div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('925191','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('925191','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('925191','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading" role="tab" id="headingThree">
+							<h4 class="panel-title">
+								<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight" aria-expanded="false"
+								 aria-controls="collapseThree">
+									Cuisine
+								</a>
+							</h4>
+						</div>
+						<div id="collapseEight" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+							<div class="panel-body" align="center">
+								<div>Fenêtre gauche</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('916998','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('916998','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('916998','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+								<div><br></div>
+								<div>Fenêtre droite</div>
+								<div class="btn-group btn-group-lg" role="group" aria-label="...">
+									<button type="button" onclick="doAction('937621','2')" class="btn btn-default">&nbsp;<img src="img/down.png">&nbsp;</button>
+									<button type="button" onclick="doAction('937621','0')" class="btn btn-default">&nbsp;<img src="img/stop.png">&nbsp;</button>
+									<button type="button" onclick="doAction('937621','1')" class="btn btn-default">&nbsp;<img src="img/up.png">&nbsp;</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+
+			<div class="panel panel-primary">
+				<!-- Default panel contents -->
+				<div class="panel-heading">NAS</div>
+				<div style="margin:10px;">
+					<button type="button" onclick="doWOL()" class="btn btn-default btn-lg btn-block">Réveiller</button>
+					<!--<button type="button" onclick="/nas/shutdown" class="btn btn-default btn-lg btn-block">Arrêter</button>
+					<button type="button" onclick="/nas/reboot" class="btn btn-default btn-lg btn-block">Redémarrer</button>-->
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script>
+		function doWOL(){
+			document.getElementById('iframe').src = "/nas/wol";
+		}
+		function doAction(id, action) {
+			console.log(id + " " + action);
+			var url = "/shutters/" + id + "/" + action;
+
+			console.log(url);
+			document.getElementById('iframe').src = url;
+
+		}
+
+	</script>
+
+	<iframe id="iframe" src="http://" style="display:none;" />
+</body>
+
+</html>
