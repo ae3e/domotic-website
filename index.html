@@ -382,7 +382,7 @@
 		}
 
 		(async () => {
-			let response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vTOv1cLBsjEvUg0TkKNK2YlIGg0_R9vxmGCGLJyx71Qhn3B5OFu27wSqK8FUcWnjUIcYmX10hn2p4pQ/pub?gid=1205536934&single=true&output=csv");
+			let response = await fetch("https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vTOv1cLBsjEvUg0TkKNK2YlIGg0_R9vxmGCGLJyx71Qhn3B5OFu27wSqK8FUcWnjUIcYmX10hn2p4pQ/pub?gid=1205536934&single=true&output=csv");
 			let lastdata = await response.text();
 			let rows = lastdata.split('\n');
 			let values = rows[1].split(',');
