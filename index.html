@@ -42,7 +42,7 @@
 						</div>
 						<div class="col-md-1 col-xs-1"></div>
 						<div class="col-md-2 col-xs-2">
-							<h2 id="bat1">- mV</h2>
+							<h2 id="bat1">- %</h2>
 							<p>Batterie</p>
 						</div>
 						<div class="col-md-2 col-xs-2"></div>
@@ -387,8 +387,8 @@
 			let rows = lastdata.split('\n');
 			let values = rows[1].split(',');
 			document.getElementById("tem1").innerHTML = values[13] + "°C";
-			document.getElementById("hum1").innerHTML = values[14] + "%";
-			document.getElementById("bat1").innerHTML = values[15] + "mV";
+			document.getElementById("hum1").innerHTML = values[15] + "%";
+			document.getElementById("bat1").innerHTML = values[17] + "%";
 			document.getElementById("date1").innerHTML = new Date(parseInt(values[12])).toLocaleString("fr");
 
 			document.getElementById("tem2").innerHTML = values[5] + "°C";
