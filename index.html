@@ -27,7 +27,7 @@
 
 			<div class="panel panel-primary">
 				<!-- Default panel contents -->
-				<div class="panel-heading">Capteur 1</div>
+				<div class="panel-heading">Capteur 4</div>
 				<div style="margin:10px;">
 					<div class="row" style='text-align: center'>
 						<div class="col-md-2 col-xs-2"></div>
@@ -96,7 +96,7 @@
 						<div class="col-md-1 col-xs-1"></div>
 						<div class="col-md-2 col-xs-2">
 							<h2 id="hum3">- %</h2>
-							<p>Humidité</p>
+							<p>Moisture</p>
 						</div>
 						<div class="col-md-1 col-xs-1"></div>
 						<div class="col-md-2 col-xs-2">
@@ -386,10 +386,10 @@
 			let lastdata = await response.text();
 			let rows = lastdata.split('\n');
 			let values = rows[1].split(',');
-			document.getElementById("tem1").innerHTML = values[1] + "°C";
-			document.getElementById("hum1").innerHTML = values[2] + "%";
-			document.getElementById("bat1").innerHTML = values[3] + "mV";
-			document.getElementById("date1").innerHTML = new Date(parseInt(values[0])).toLocaleString("fr");
+			document.getElementById("tem1").innerHTML = values[13] + "°C";
+			document.getElementById("hum1").innerHTML = values[14] + "%";
+			document.getElementById("bat1").innerHTML = values[15] + "mV";
+			document.getElementById("date1").innerHTML = new Date(parseInt(values[1é])).toLocaleString("fr");
 
 			document.getElementById("tem2").innerHTML = values[5] + "°C";
 			document.getElementById("hum2").innerHTML = values[6] + "%";
